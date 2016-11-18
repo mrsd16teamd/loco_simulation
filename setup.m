@@ -1,15 +1,12 @@
 clear;
-m = 5; %mass (kg)
+m = 2.622; %mass (kg)
 L = 0.255; %wheelbase (m)
-a = 0.1; %CoG to front axle
-b = 0.155; %CoG to rear axle
+a = 0.1329; %CoG to front axle
+b = 0.1221; %CoG to rear axle
 mu = 0.2; %friction coeffcient
-C_alpha = 10; %laternal stiffness
+C_alpha = 20; %laternal stiffness
 Iz = 0.2;
-initial_states = [0 0 3]; %CoG angle: beta(rad); yaw rate: r(rad/s); heading velocity Ux(m/s)
-
-% global param;
-% param = [m L a b mu C_alpha Iz]
+initial_states = [0 0.0 1.7]; %CoG angle: beta(rad); yaw rate: r(rad/s); speed U(m/s)
 % ----------------------------------------------
 % -------  swarm and control parameters  -------
 % ----------------------------------------------
@@ -39,7 +36,7 @@ anim_fps=40; % (animation frames / second)
 enable_CG_trace=1;       % (0/1) plot animation trace from vehicle CG, or geometric center
 enable_rearAxle_trace=1; % (0/1) enable animation trace from rear axle
 
-save_anim_frames=0; % (0/1) save animation frames? this slows the simulation considerably
+save_anim_frames=1; % (0/1) save animation frames? this slows the simulation considerably
                     %       when writing a .jpeg image to file at each animation interval. 
                     %       see writeVideo() at this link for converting into .avi movies:
                     %       http://www.mathworks.com/help/matlab/examples/convert-between-image-sequences-and-video.html)
@@ -65,4 +62,4 @@ animation_update_interval=C*h_fixed; % (s) This parameter controls three things:
 
 
 
-open_system('LoCo_Simulation/bicycle_drift_model.slx');
+% open_system('LoCo_Simulation/bicycle_drift_model.slx');

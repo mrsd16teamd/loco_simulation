@@ -9,7 +9,7 @@
 % created : 11 Jan 2016
 % modified: 17 Jan 2016
 
-workingDir = 'anim_sequences'; % set this to wherever you want
+workingDir = 'loco_simulation'; % set this to wherever you want
                                % You might want to turn off Dropbox or Box
                                % or iCloud or Google Drive
                                % file synchronization services while making

@@ -385,22 +385,22 @@ delta = u(4); % (rad) front tire's steered angle (w.r.t. vehicle yaw angle)
 
 % make a sequence of animation frames for a movie?
 if Config.save_anim_frames==1,
-   
-   % increment state x(6) for current frame number
-   sys(6) = x(6) + 1;
-   
-   % create jpg filename string using datetime() function in Simulink
-   % dialogue box - this creates a single animation sequence using the date
-   % and time from when the Simulink model was started
-   imgFileStr=sprintf('%s_img_%0.6i.jpg',Config.anim_frame_name_str,sys(6)); % note: %0.6i pads with leading zeros just like writeVideo() demo
-   
-   % prepend a folder to contain all these animation sequence images
-   myFile = fullfile('anim_sequences',imgFileStr);
-   
-   str=sprintf('saving image sequence [%s]',myFile); disp(str)
-   
-   % write this graphics frame to a file
-   print('-opengl','-djpeg',myFile);
+   Movie = getframe(gcf);
+%    % increment state x(6) for current frame number
+%    sys(6) = x(6) + 1;
+%    
+%    % create jpg filename string using datetime() function in Simulink
+%    % dialogue box - this creates a single animation sequence using the date
+%    % and time from when the Simulink model was started
+%    imgFileStr=sprintf('%s_img_%0.6i.jpg',Config.anim_frame_name_str,sys(6)); % note: %0.6i pads with leading zeros just like writeVideo() demo
+%    
+%    % prepend a folder to contain all these animation sequence images
+%    myFile = fullfile('anim_sequences',imgFileStr);
+%    
+%    str=sprintf('saving image sequence [%s]',myFile); disp(str)
+%    
+%    % write this graphics frame to a file
+%    print('-opengl','-djpeg',myFile);
 end
 
 end % mdlUpdate
