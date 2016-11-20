@@ -3,10 +3,11 @@ m = 2.622; %mass (kg)
 L = 0.255; %wheelbase (m)
 a = 0.1329; %CoG to front axle
 b = 0.1221; %CoG to rear axle
-mu = 0.2; %friction coeffcient
+mu = 0.3; %friction coeffcient
 C_alpha = 20; %laternal stiffness
 Iz = 0.2;
 initial_states = [0 0.0 1.7]; %CoG angle: beta(rad); yaw rate: r(rad/s); speed U(m/s)
+% initial_states = [0.6 3 1.7];
 % ----------------------------------------------
 % -------  swarm and control parameters  -------
 % ----------------------------------------------
