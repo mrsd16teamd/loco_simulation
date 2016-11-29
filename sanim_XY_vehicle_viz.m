@@ -154,12 +154,7 @@ ts = [Config.Ts 0]; % inherited
            'YMinorTick','on',...
            'Tag','3d_axes');
        
-    % this reverses the direction of increasing Y values
-    % to make Matlab figure window conform to SAE coordinates where:
-    %    +X is to the right (as usual)
-    %    +Y is down
-    %    +Z is into the paper
-    set(handle.axes(1),'YDir','reverse')
+    set(handle.axes(1))
     
     % set axes to initial [xmin xmax ymin ymax]
     axis(Config.ax);
@@ -384,8 +379,9 @@ delta = u(4); % (rad) front tire's steered angle (w.r.t. vehicle yaw angle)
    %drawnow
 
 % make a sequence of animation frames for a movie?
-if Config.save_anim_frames==1,
-   Movie = getframe(gcf);
+if Config.save_anim_frames~=0,
+%    Movie = getframe(gcf);
+    pause(Config.save_anim_frames);
 %    % increment state x(6) for current frame number
 %    sys(6) = x(6) + 1;
 %    

@@ -3,17 +3,19 @@ m = 2.622; %mass (kg)
 L = 0.255; %wheelbase (m)
 a = 0.1329; %CoG to front axle
 b = 0.1221; %CoG to rear axle
-mu = 0.3; %friction coeffcient
-C_alpha = 20; %laternal stiffness
-Iz = 0.2;
-initial_states = [0 0.0 1.7]; %CoG angle: beta(rad); yaw rate: r(rad/s); speed U(m/s)
-% initial_states = [0.6 3 1.7];
+mu = 0.37; %friction coeffcient
+C_alpha = 1200; %laternal stiffness
+Iz = 0.020899525;
+initial_states = [0 0 0.1]; %CoG angle: beta(rad); yaw rate: r(rad/s); speed U(m/s)
+% initial_states = [0 0 2];
+initial_states_Uxy = [0.0 2 0];
+save_anim_frames=0.1;
 % ----------------------------------------------
 % -------  swarm and control parameters  -------
 % ----------------------------------------------
 vehicle_length = 0.255; % (m)
 %vehicle_length = 0.1; % (m)
-vehicle_width  = 0.15; % (m)
+vehicle_width  = 0.18; % (m)
 
 
 X_ic = 0*[4*(rand-0.5)+3]; % (m) random ICs on X position, note: rand() is on [0 1]
@@ -37,7 +39,7 @@ anim_fps=40; % (animation frames / second)
 enable_CG_trace=1;       % (0/1) plot animation trace from vehicle CG, or geometric center
 enable_rearAxle_trace=1; % (0/1) enable animation trace from rear axle
 
-save_anim_frames=1; % (0/1) save animation frames? this slows the simulation considerably
+ % (0/1) save animation frames? this slows the simulation considerably
                     %       when writing a .jpeg image to file at each animation interval. 
                     %       see writeVideo() at this link for converting into .avi movies:
                     %       http://www.mathworks.com/help/matlab/examples/convert-between-image-sequences-and-video.html)

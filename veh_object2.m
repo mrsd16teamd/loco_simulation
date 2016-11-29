@@ -30,8 +30,8 @@ y_veh = (1/2)*[ 0,   0.6,      1,         1,   0.8, -0.8,      -1,     -1, -0.6,
 
 
 % make the vehicel chassis a little longer than the wheelbase
-veh_obj.vertices = 1.3*[L*x_veh;
-                        W*y_veh];
+veh_obj.vertices = [1.2*L*x_veh;
+                        0.7*W*y_veh];
 
 % define the object faces
 veh_obj.faces = 1:length(x_veh);
@@ -45,7 +45,7 @@ veh_obj.faces = 1:length(x_veh);
 % at geometric center of tire
 % pt#        1       2     3         4      5     6         7      8     9        10     11     12
 x_tire = (1/2)*[ 1   ,  0.98,  0.95,    -0.95, -0.98,   -1,      -1, -0.98, -0.95,    0.95,  0.98,     1];
-y_tire = (1/2)*[ 0.60,  0.90,     1,        1,  0.90, 0.60,    -0.60, -0.90,    -1,      -1, -0.90, -0.60];
+y_tire = 1.1*(1/2)*[ 0.60,  0.90,     1,        1,  0.90, 0.60,    -0.60, -0.90,    -1,      -1, -0.90, -0.60];
 
 L_tire = obj_length;
 W_tire = obj_width;
