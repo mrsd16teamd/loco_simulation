@@ -4,12 +4,12 @@ L = 0.255; %wheelbase (m)
 a = 0.1329; %CoG to front axle
 b = 0.1221; %CoG to rear axle
 mu = 0.37; %friction coeffcient
-C_alpha = 1200; %laternal stiffness
+C_alpha = 120000; %laternal stiffness
 Iz = 0.020899525;
 initial_states = [0 0 0.1]; %CoG angle: beta(rad); yaw rate: r(rad/s); speed U(m/s)
 % initial_states = [0 0 2];
-initial_states_Uxy = [0.0 2 0];
-save_anim_frames=0.1;
+initial_states_Uxy = [0.0 0 0.1];
+save_anim_frames=0.002;
 % ----------------------------------------------
 % -------  swarm and control parameters  -------
 % ----------------------------------------------
@@ -31,7 +31,7 @@ h_fixed = 0.05; % (s) fixed solver simulation stepsize
 
 plotAxisLimitMode = 0; % 0->auto, 1->fixed, use Axes Limits in 'plotAxisLimits'
 %plotAxisLimits = [-3 5 -3 6]*20; % [xmin xmax ymin ymax]
-plotAxisLimits = [-3 5 -3 6]*0.3; % [xmin xmax ymin ymax]
+plotAxisLimits = [-3 5 -3 6]*0.3; % [xmin xmax ymin ymax
 
 %anim_fps=20; % (animation frames / second)
 anim_fps=40; % (animation frames / second)
