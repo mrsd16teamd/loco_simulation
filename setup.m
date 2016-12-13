@@ -9,7 +9,7 @@ Iz = 0.020899525;
 initial_states = [0 0 0.1]; %CoG angle: beta(rad); yaw rate: r(rad/s); speed U(m/s)
 % initial_states = [0 0 2];
 initial_states_Uxy = [0.0 0 0.1];
-save_anim_frames=0.002;
+save_anim_frames=0.0001;
 % ----------------------------------------------
 % -------  swarm and control parameters  -------
 % ----------------------------------------------
