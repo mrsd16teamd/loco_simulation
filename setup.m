@@ -1,14 +1,14 @@
 clear;
-m = 2.622; %mass (kg)
-L = 0.255; %wheelbase (m)
-a = 0.1329; %CoG to front axle
-b = 0.1221; %CoG to rear axle
-mu = 0.37; %friction coeffcient
-C_alpha = 120000; %laternal stiffness
+m = 2.622;              % mass (kg)
+L = 0.255;              % wheelbase (m)
+a = 0.1329;             % CoG to front axle
+b = 0.1221;             % CoG to rear axle
+mu = 0.37;              %friction coeffcient
+C_x = 120000            % longitude stiffness
+C_alpha = 120000;       % laternal stiffness
 Iz = 0.020899525;
-initial_states = [0 0 0.1]; %CoG angle: beta(rad); yaw rate: r(rad/s); speed U(m/s)
+initial_states = [0 1 0]; %CoG angle: beta(rad); yaw rate: r(rad/s); speed U(m/s)
 % initial_states = [0 0 2];
-initial_states_Uxy = [0.0 0 0.1];
 save_anim_frames=0.0001;
 % ----------------------------------------------
 % -------  swarm and control parameters  -------
@@ -19,7 +19,7 @@ vehicle_width  = 0.18; % (m)
 
 
 X_ic = 0*[4*(rand-0.5)+3]; % (m) random ICs on X position, note: rand() is on [0 1]
-Y_ic = 0*[5*(rand-0.5)+0]; % (m) random ICs on Y position
+Y_ic = 0*[5*(rand-0.5)+0]; % (m) random ICs on Y positio
 %yaw_ic = 2*pi*(rand(nAgents,1)-0.5); % (rad) random ICs for yaw, or heading
 yaw_ic = 0; % (rad) random ICs for yaw, or heading
 
