@@ -37,7 +37,12 @@ delta = u(2);
 % --------------Tire Dyanmics-------------
 % ----------------------------------------
 % longitude wheel slip K
-K = (Ux_cmd-Ux)/abs(Ux);
+if Ux_cmd == Ux
+    K = 0;
+else
+    K = (Ux_cmd-Ux)/abs(Ux);
+end
+
 % lateral slip angle alpha
 if Ux == 0 && Uy == 0   % vehicle is still no slip
     alpha_F = 0;

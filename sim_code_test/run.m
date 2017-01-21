@@ -17,7 +17,7 @@ for t = 0:dt:10
     addpoints(h,pos(1,:),pos(2,:));
     drawnow
     
-    u = [1,0.5];
+    u = [0,0];
     new_x = dynamics_finite(x, u, dt);
     x = new_x;
 end
